@@ -9,9 +9,10 @@
 ---
 
 ## Identify a lane thresholding strategy
-In my project, I had explored RGB color space. we need to detect white and yellow lines on the road.Ideally, White RGB values are (255,255,255) where yellow has RGB values as (255,255,0). I explored diferent thresholds values and and finally settled with (210,201,150) to accomidate for intensenty variation due to lighting conditions. Resuls for this approch are visbile below.
-[image1]:https://github.com/willofdiamond/CarND-LaneLines-P1/blob/master/test_images_output/rgb_threshold.png "rgb threshold image"
-[image2]:https://github.com/willofdiamond/CarND-LaneLines-P1/blob/master/test_images_output/rgb_threshold_avge_slopeandintercept.png "rgb threshold avge slopeandintercept image"
+In my project, I had explored RGB color space. we need to detect white and yellow lines on the road.Ideally, White RGB values are (255,255,255) where yellow has RGB values as (255,255,0). I explored diferent thresholds values and and finally settled with (210,201,150) to accomidate for intensenty variation due to lighting conditions. Resuls for this approch are visbile below.  
+
+[image1]: https://github.com/willofdiamond/CarND-LaneLines-P1/blob/master/test_images_output/rgb_threshold.png "rgb threshold image" 
+[image2]: https://github.com/willofdiamond/CarND-LaneLines-P1/blob/master/test_images_output/rgb_threshold_avge_slopeandintercept.png   "rgb threshold avge slopeandintercept image"  
 ![alt text][image1]
 ![alt text][image2]
 
