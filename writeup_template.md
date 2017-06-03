@@ -38,20 +38,10 @@ Average slope and Y- intercept of the right and left lane are used to extrapolat
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
-
-
-### 2. Identify potential shortcomings with your current pipeline
+### 1. Identify potential shortcomings with your current pipeline
 As I rely on the RGB space. Bright light reflection on the road makes lane detection hard.
 
 
-### 3. Suggest possible improvements to your pipeline
+### 2. Suggest possible improvements to your pipeline
 I would like to check the thresholding in other color spaces and test the algorithm on more sample videos
