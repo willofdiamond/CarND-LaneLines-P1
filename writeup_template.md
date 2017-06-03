@@ -1,21 +1,37 @@
 # **Finding Lane Lines on the Road** 
-
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
+## Steps to implement lane detection
+1. Identify a lane thresholding strategy
+2. Apply edge detection algorithm
+3. Detect lines by using hough transform
+4. Seperate the lanes as left and right using their slopes
+5. Extrapolate lanes based on average slope and y-intercepsts of left and right lanes
 
 ---
 
-**Finding Lane Lines on the Road**
+##Identify a lane thresholding strategy
+In my project, I had explored RGB color space. we need to detect white and yellow lines on the road.Ideally, White RGB values are (255,255,255) where yellow has RGB values as (255,255,0). I explored diferent thresholds values and and finally settled with (210,201,150) to accomidate for intensenty variation due to lighting conditions. Resuls for this approch are visbile below.
+[image1]:
+[image2]:
+![alt text][image1]
+![alt text][image2]
 
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
+After furture more anlaysis I felt confident that red channel will do just fine or much better the RGB. I had selected 150 threshold for Red channel image. Have to explore other color spaces yet.
+
+## Apply edge detection algorithm
+Before applying edge detection it is a good practice to average the image as it removes noise in the images. I had used canny edge detection for detecting edges. I had selected low threshold as 30 and high threshold as 120.
+
+## Detect lines by using hough transform
+Hough is the most populare line detection used in computer vision problems. This can be used to detect line segment and its end points
+
+## Seperate the lanes as left and right using their slope
+1. Line end points from hough transform can be used to find slope.
+2. Right lane should have negative slope while left lane should have positive slope. It is common sense to ignore horizantal lines and line with slope near to 0. 
+3. Average slope and Y- intercept of the right and left lane are detected.
+
+## Extrapolate lanes based on average slope and y-intercepsts of left and right lanes
+Average slope and Y- intercept of the right and left lane are used to extrapolate the new lanes
 
 
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
 
 ---
 
@@ -33,15 +49,8 @@ If you'd like to include images to show how the pipeline works, here is how to i
 
 
 ### 2. Identify potential shortcomings with your current pipeline
-
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+As I rely on the RGB space. Bright light reflection on the road makes lane detection hard.
 
 
 ### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+I would like to check the thresholding in other color spaces and test the algorithm on more sample videos
